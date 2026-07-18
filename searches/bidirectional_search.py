@@ -18,7 +18,9 @@ from __future__ import annotations
 from collections import deque
 
 
-def bidirectional_search(graph: dict[str, list[str]], source: str, target: str) -> list[str] | None:
+def bidirectional_search(
+    graph: dict[str, list[str]], source: str, target: str
+) -> list[str] | None:
     """
     Return the shortest path from source to target using bidirectional BFS,
     or None if no path exists.

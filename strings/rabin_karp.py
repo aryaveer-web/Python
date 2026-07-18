@@ -48,10 +48,9 @@ def rabin_karp(text: str, pattern: str) -> list[int]:
         window_hash = (BASE * window_hash + ord(text[i])) % MOD
 
     for i in range(n - m + 1):
-        if pattern_hash == window_hash:
-            # Hash match — verify character by character to rule out collision
-            if text[i : i + m] == pattern:
-                results.append(i)
+        # Hash match — verify character by character to rule out collision
+        if pattern_hash == window_hash and text[i : i + m] == pattern:
+            results.append(i)
 
         if i < n - m:
             # Roll the hash: remove leading character, add next character
